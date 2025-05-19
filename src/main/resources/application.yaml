@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: CodePing-Server
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/codeping
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 604800000
+      cache-null-values: false
+      use-key-prefix: true
+      key-prefix: codeping_
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+
+  webflux:
+    base-path: /
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.codeping: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /
+    operationsSorter: method
+    enabled: true
