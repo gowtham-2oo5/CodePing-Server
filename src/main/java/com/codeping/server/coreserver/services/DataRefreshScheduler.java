@@ -103,8 +103,8 @@ public class DataRefreshScheduler {
         }
     }
 
-    // Clear all caches at midnight every day
-    @Scheduled(cron = "0 0 0 * * ?")
+    // Clear all caches at midnight every Monday
+    @Scheduled(cron = "0 0 0 * * MON")
     public void clearAllCaches() {
         log.info("Starting scheduled cache clear");
         try {

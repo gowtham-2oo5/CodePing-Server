@@ -138,18 +138,4 @@ public class CodeChefMapper {
                 0, 0, 0).toEpochSecond(java.time.ZoneOffset.UTC);
     }
 
-    private Long parseDateTime(String dateTimeStr) {
-        try {
-            log.debug("Parsing date string: {}", dateTimeStr);
-            // The date is already in a good format, just parse it directly
-            java.time.ZonedDateTime zdt = java.time.ZonedDateTime.parse(dateTimeStr);
-            Long timestamp = zdt.toEpochSecond();
-            log.debug("Successfully parsed date to timestamp: {}", timestamp);
-            return timestamp;
-        } catch (Exception e) {
-            log.error("Error parsing date: {} - Error: {}", dateTimeStr, e.getMessage());
-            throw new RuntimeException("Error parsing date: " + dateTimeStr, e);
-        }
-    }
-
 }

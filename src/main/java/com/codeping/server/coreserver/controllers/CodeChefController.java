@@ -1,6 +1,9 @@
 package com.codeping.server.coreserver.controllers;
 
-import com.codeping.server.coreserver.models.*;
+import com.codeping.server.coreserver.models.Contest;
+import com.codeping.server.coreserver.models.ContestHistory;
+import com.codeping.server.coreserver.models.Submission;
+import com.codeping.server.coreserver.models.UserProfile;
 import com.codeping.server.coreserver.services.CodeChefService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
